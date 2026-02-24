@@ -5,24 +5,22 @@ import { Suspense } from "react";
 import { Environment, OrbitControls } from "@react-three/drei";
 import NavBar from "./components/NavBar/NavBar";
 
-
 export default function App() {
   return (
-    <div id="canvas-container">
+    <div id="page">
       <NavBar />
-      <Canvas 
-        camera={{ position: [0, 0, 5], near: 0.1, far: 1000, fov: 75}} 
-      >
-        <ambientLight color={0xffffff} intensity={1} />
-        {/* <directionalLight color={0xc90000} position={[0, 50, 50]} intensity={1} />
-        <directionalLight color={0xfff400} position={[0, 50, -50]} intensity={1} />
-        <directionalLight color={0x0004ff} position={[0, 50, 0]} intensity={1} /> */}
-        <Suspense fallback={null}>
-          <Car />
-          <OrbitControls />
-          <Environment preset="sunset" background />
-        </Suspense>
-      </Canvas>
+      <div id="canvas-container" style={{ width: "50vw", height: "50vh" }}>
+        <Canvas id="canvas"
+          camera={{ position: [0, 0, 5], near: 0.1, far: 1000, fov: 75}}
+          innerHeight={window.innerHeight}
+        >
+          <Suspense fallback={null}>
+            <Car />
+            <OrbitControls />
+            <Environment preset="sunset" background />
+          </Suspense>
+        </Canvas>
+      </div>
     </div>
   );
 }
