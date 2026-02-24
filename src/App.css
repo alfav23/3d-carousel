@@ -5,6 +5,20 @@
   text-align: center;
 }
 
+.page {
+  background-color: black;
+}
+
 #canvas-container {
-  margin: auto 0;
+  background-color: black;
+}
+
+@media (prefers-color-scheme: light) {
+  .page{
+    background-color: white;
+  }
+
+  #canvas-container {
+    background-color: white;
+  }
 }
