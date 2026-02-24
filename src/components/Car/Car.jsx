@@ -5,7 +5,7 @@ export default function Car() {
     const gltf = useLoader(GLTFLoader, "/E24_Materials.gltf");
     return (
         <>
-            <primitive object={gltf.scene} scale={0.4} />
+            <primitive object={gltf.scene} scale={1} />
         </>
     );
 }
