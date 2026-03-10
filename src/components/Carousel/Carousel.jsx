@@ -1,22 +1,42 @@
-import { useState } from 'react';
 import Car from "../Car/Car";
 import Container from "../Container/Container";
+import { useState } from "react";
 
 export default function Carousel(){
-    const [active, setActive] = useState(0);
-
+    
+    const [ isActive, setIsActive ] = useState(0);
     return (
-        <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>
-            <ol style={{ position: 'absolute', top: '20px', left: '50%', transform: 'translateX(-50%)', display: 'flex', listStyle: 'none', padding: 0, zIndex: 10 }}>
-                <li onClick={() => setActive(0)} style={{ width: '15px', height: '15px', borderRadius: '50%', background: active === 0 ? 'white' : 'black', margin: '0 10px', cursor: 'pointer', border: `2px solid ${active === 0 ? 'black' : 'white'}` }}></li>
-                <li onClick={() => setActive(1)} style={{ width: '15px', height: '15px', borderRadius: '50%', background: active === 1 ? 'white' : 'black', margin: '0 10px', cursor: 'pointer', border: `2px solid ${active === 1 ? 'black' : 'white'}` }}></li>
-                <li onClick={() => setActive(2)} style={{ width: '15px', height: '15px', borderRadius: '50%', background: active === 2 ? 'white' : 'black', margin: '0 10px', cursor: 'pointer', border: `2px solid ${active === 2 ? 'black' : 'white'}` }}></li>
+        <div id="carouselExampleIndicators" data-bs-ride="carousel" className="carousel slide">
+            <ol className="carousel-indicators">
+                <li onClick={() => setIsActive(0)} data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"></li>
+                <li onClick={() => setIsActive(1)} data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                <li onClick={() => setIsActive(2)} data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
             </ol>
-            <Container active={active}>
-                <Car />
-                <Car />
-                <Car />
-            </Container>
+            <div className="carousel-inner">
+                <div className={`active carousel-item`}>
+                    <Container active={isActive}>
+                        <Car />
+                    </Container>
+                </div>
+                <div className={`carousel-item`}>
+                    <Container active={isActive}>
+                        <Car />
+                    </Container>
+                </div>
+                <div className={`carousel-item`}>
+                    <Container active={isActive}>
+                        <Car />
+                    </Container>
+                </div>
+            </div>
+            <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="sr-only">Previous</span> 
+            </a>
+            <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="sr-only">Next</span>
+            </a>
         </div>
     )
 }
