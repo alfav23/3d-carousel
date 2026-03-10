@@ -1,4 +1,5 @@
 import Car from "../Car/Car";
+import Container from "../Container/Container";
 
 export default function Carousel(){
     return (
@@ -10,13 +11,19 @@ export default function Carousel(){
             </ol>
             <div className="carousel-inner">
                 <div className="active carousel-item">
-                    <Car />
+                    <Container>
+                        <Car />
+                    </Container>
                 </div>
                 <div className="carousel-item">
-                    <Car />
+                    <Container>
+                        <Car />
+                    </Container>
                 </div>
                 <div className="carousel-item">
-                    <Car />
+                    <Container>
+                        <Car />
+                    </Container>
                 </div>
             </div>
             <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
