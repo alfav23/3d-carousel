@@ -1,5 +1,6 @@
 import NavBar from "./components/NavBar/NavBar";
 import Carousel from './components/Carousel/Carousel';
+import Footer from "./components/Footer/Footer";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           </Suspense>
         </Canvas>
       </div> */}
+      <Footer />
     </div>
   );
 }

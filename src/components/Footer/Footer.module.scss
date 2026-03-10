@@ -1,3 +1,7 @@
-.footerInner p {
-    text-align: center;
+.footerInner, .footerOuter{
+    background-color: black;
+    p {
+        text-align: center;
+        color: white;
+    }
 }
