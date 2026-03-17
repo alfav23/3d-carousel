@@ -1,35 +1,64 @@
 .navbar {
+    font-family: 'Ithaca', sans-serif;
+    display: flex;
+    justify-content: center;
     background-color: black;
-    color: white;
+    color: green;
 }
 
 .navbarBrand, .navItem {
-    color: white;
+    font-family: 'Ithaca', sans-serif;
+    color: green;
 }
 
-.navbarToggler {
-    border: none;
+.cursor {
+  position: relative;
 }
 
-.hamburger {
-    color: white;
+.cursor span {
+  animation-name: blink;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+  opacity: 1;
 }
 
-@media (prefers-color-scheme: light) {
-  .navbar {
-    background-color: white;
-    color: black;
+.cursor input:focus+span {
+  display: none;
 }
 
-.navbarBrand, .navItem {
-    color: black;
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
-.navbarToggler {
-    border: none;
-}
+// .navbarToggler {
+//     border: none;
+// }
 
-.hamburger {
-    color: black;
-}
-}
+// .hamburger {
+//     color: white;
+// }
+
+// @media (prefers-color-scheme: light) {
+//   .navbar {
+//     background-color: white;
+//     color: black;
+// }
+
+// .navbarBrand, .navItem {
+//     color: black;
+// }
+
+// .navbarToggler {
+//     border: none;
+// }
+
+// .hamburger {
+//     color: black;
+// }
+// }

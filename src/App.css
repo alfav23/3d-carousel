@@ -1,4 +1,11 @@
+@font-face {
+  font-family: 'Ithaca'; /* set name */
+  src:  local('Ithaca'), 
+        url('/Ithaca-LVB75.tff') format('truetype');
+}
+
 #root {
+  font-family: 'Ithaca', sans-serif;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -6,14 +13,16 @@
 }
 
 .page {
+  font-family: 'Ithaca', sans-serif;
   background-color: black;
 }
 
 #canvas-container {
+  font-family: 'Ithaca', sans-serif;
   background-color: black;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   .page{
     background-color: white;
   }
@@ -21,4 +30,4 @@
   #canvas-container {
     background-color: white;
   }
-}
+} */
