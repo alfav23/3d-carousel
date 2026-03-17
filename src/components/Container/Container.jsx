@@ -28,7 +28,11 @@ function Scene({ children, active }) {
                 ))}
             </group>
             <OrbitControls />
-            <Environment preset="sunset" background />
+            {/* <Environment preset="city" background /> */}
+            <Environment
+                files='rooftop_night_2k.hdr'
+                background
+            />
         </>
     );
 }
