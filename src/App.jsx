@@ -1,11 +1,11 @@
-import NavBar from "./components/NavBar/NavBar";
 import Carousel from './components/Carousel/Carousel';
 import Footer from "./components/Footer/Footer";
+import Header from "./components/NavBar";
 
 export default function App() {
   return (
     <div id="page" style={{ background: "black" || "white"}}>
-      <NavBar />
+      <Header />
       <Carousel />
       {/* <div id="canvas-container" style={{ width: "100vw", height: "100vh" }}>
         <Canvas id="canvas"

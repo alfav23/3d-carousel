@@ -22,7 +22,7 @@ function Scene({ children, active }) {
             <directionalLight position={[10, 10, 5]} intensity={1} />
             <group ref={groupRef}>
                 {React.Children.map(children, (child, i) => (
-                    <group key={i} position={[Math.cos(i * angle) * 2, 0, Math.sin(i * angle) * 2]}>
+                    <group key={i} position={[Math.cos(i * angle) * 6, 0, Math.sin(i * angle) * 6]}>
                         {child}
                     </group>
                 ))}
@@ -41,7 +41,7 @@ export default function Container ({ children, active = 0 }) {
     return (
         <div id="canvas-container" style={{ width: "100vw", height: "100vh" }}>
             <Canvas id="canvas"
-            camera={{ position: [0, 0, 5], near: 0.1, far: 1000, fov: 75}}
+            camera={{ position: [-10, 2, 8], near: 0.1, far: 1000, fov: 75}}
             >
                 <Suspense fallback={null}>
                 <Scene active={active}>{children}</Scene>
