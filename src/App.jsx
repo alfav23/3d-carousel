@@ -1,7 +1,6 @@
 import Carousel from './components/Carousel/Carousel';
 import Footer from "./components/Footer/Footer";
-import Header from "./components/NavBar";
-import Modal from './components/Modal';
+import Header from "./components/Header";
 
 export default function App() {
   return (

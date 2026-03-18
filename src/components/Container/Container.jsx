@@ -1,6 +1,6 @@
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Suspense, useRef } from "react";
-import { Environment, OrbitControls } from "@react-three/drei";
+import { Environment } from "@react-three/drei";
 import * as React from 'react';
 
 function Scene({ children, active }) {
@@ -32,6 +32,11 @@ function Scene({ children, active }) {
             <Environment
                 files='rooftop_night_2k.hdr'
                 background
+                ground={{
+                    height: 15, // Height of the camera that was used to create the env map (Default: 15)
+                    radius: 60, // Radius of the world. (Default 60)
+                    scale: 1000, // Scale of the backside projected sphere that holds the env texture (Default: 1000)
+                }}
             />
         </>
     );
@@ -41,7 +46,15 @@ export default function Container ({ children, active = 0 }) {
     return (
         <div id="canvas-container" style={{ width: "100vw", height: "100vh" }}>
             <Canvas id="canvas"
+            //camera for updated order with desired background
             camera={{ position: [-10, 2, 8], near: 0.1, far: 500, fov: 45}}
+            //
+            //
+            //
+            // camera position for correct original order
+            // camera={{ position: [14, 2, 0], near: 0.1, far: 500, fov: 45}}
+            // 
+            //
             >
                 <Suspense fallback={null}>
                 <Scene active={active}>{children}</Scene>

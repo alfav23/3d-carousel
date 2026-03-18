@@ -1,55 +1,60 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Car from "../Car/Car";
 import Container from "../Container/Container";
 import { FaAnglesLeft, FaAnglesRight } from "react-icons/fa6";
 import Modal from '../Modal';
+import Cars from  '../../data.json';
 
 export default function Carousel(){
+    const [cars, setCars] = useState([])
     const [active, setActive] = useState(0);
     const [showModal, setShowModal] = useState(false);
     const [carName, setCarName] = useState('');
     const [carDescription, setCarDescription] = useState('')
     const [ src, setSrc ] = useState('')
 
+    //fetch json data
+    const getCars = () => {
+        fetch('/src/data.json'
+            ,{
+                headers : {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            }
+        )
+        .then(function(response){
+        console.log(response)
+        return response.json();
+      })
+      .then(function(myJson) {
+        console.log(myJson);
+        setCars(myJson)
+      });
+  }
+
     //function to display modal
     const handleOpenModal = (active) => {
+        getCars();
         setShowModal(true);
-        if(active === 0){
-            setCarName('Sports Car');
-            setCarDescription('A black muscle car')
-            setSrc('/https://www.cgtrader.com/free-3d-models/vehicle/other/stylized-muscular-car')
-        }
-        if(active === 1){
-            setCarName('Maruti Suzuki Zen Custom');
-            setCarDescription('A red hatchback')
-            setSrc('/https://www.cgtrader.com/free-3d-models/car/sport-car/maruti-suzuki-zen-custom')
-        }
-        if(active === 2){
-            setCarName('Legend Drift Car');
-            setCarDescription('Custom drift car with dragon design. No wheels. Good luck.')
-            setSrc('/https://www.cgtrader.com/free-3d-models/car/racing-car/legend-drift-car-legendary-80s-coupe-low-poly-pbr-game-ready')
-        }
-        if(active === 3){
-            setCarName('Legend Drift Car');
-            setCarDescription('Custom drift car with dragon design')
-            setSrc('/https://www.cgtrader.com/free-3d-models/car/racing-car/legend-drift-car-legendary-80s-coupe-low-poly-pbr-game-ready')
-        }
-        if(active === 4){
-            setCarName('Nissan Skyline');
-            setCarDescription('White with blue accents')
-            setSrc('/https://www.cgtrader.com/free-3d-models/car/racing-car/nissan-skyline-low-poly-game-ready-3d-model-low-poly-3d-model')
-        } else {
-            setCarName('E24');
-            setCarDescription('Default car');
-            setSrc('');
-        }
-        
-    }
+        Cars.forEach(car => {
+            if(active === car.id) {
+                setCarName(car.name);
+                setCarDescription(car.description);
+                setSrc(car.src);
+            } else {
+                setCarName('E24');
+                setCarDescription('Default car');
+                setSrc(null);
+            }
+        });     
+    };
 
     const handleCloseModal = () => {
         setShowModal(false);
         setCarName('');
         setCarDescription('');
+        setSrc(null)
     }
 
 
