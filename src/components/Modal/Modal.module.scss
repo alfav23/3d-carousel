@@ -1,11 +1,11 @@
 .modalOverlay {
     background-color: #2e2e2ecc;
     border: 1px solid #ffffff88;
+    border-radius: 0;
     z-index: 1000;
     position: fixed;
     top: 25%;
     right: 25%;
-    border-radius: 4px;
     width: 50%;
     max-width: 480px;
     min-width: 200px;
