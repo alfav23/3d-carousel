@@ -11,8 +11,8 @@ export default function Modal({ show, onClose, src = '', name = 'BMW E24', descr
                     &times;
                 </button>
                 <iframe src={src} style={{width:'100%', maxWidth:'560px', aspectRatio:'7/5', border:'none'}}></iframe>
-                <h4>{name}</h4>
-                <p>{description}</p>
+                <h4 className={styles.carName}>{name}</h4>
+                <p className={styles.carDescription}>{description}</p>
             </div>
         </div>
     )

@@ -2,9 +2,9 @@
     background-color: #2e2e2ecc;
     border: 1px solid #ffffff88;
     z-index: 1000;
-    position: absolute;
+    position: fixed;
     top: 25%;
-    right: 12.5%;
+    right: 25%;
     border-radius: 4px;
     width: 50%;
     max-width: 480px;
@@ -25,6 +25,9 @@
     right: 0;
 }
 
+.carName, .carDescription {
+    color: green;
+}
 @media screen and (max-width: 425px) {
     .modalContent {
         padding: 1rem;

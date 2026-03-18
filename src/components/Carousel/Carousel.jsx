@@ -56,11 +56,11 @@ export default function Carousel(){
     return (
         <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>
             <ol 
-                style={{ position: 'absolute', top: '20px', left: '50%', transform: 'translateX(-50%)', display: 'flex', listStyle: 'none', padding: 0, zIndex: 10, background: 'black'}}
+                style={{ position: 'absolute', top: '20px', left: '50%', transform: 'translateX(-50%)', listStyle: 'none', padding: 0, zIndex: 10, background: 'black', display: `${showModal ? 'none' : 'flex'}`}}
             >
                 <button 
                     onClick={() => setActive(active-1)}
-                    style={{background: 'none', border: 'none', color: 'white', disabled: `${active<=0 ? 'true' : 'false'}`}}
+                    style={{background: 'none', border: 'none', color: 'white', display: `${active<=0 ? 'none' : 'block'}`}}
                 >
                     <FaAnglesLeft />
                 </button>
@@ -102,7 +102,7 @@ export default function Carousel(){
 
                 <button 
                     onClick={() => setActive(active+1)}
-                    style={{background: 'none', border: 'none', color: 'white', disabled: `${active>=4 ? 'true' : 'false'}`}}
+                    style={{background: 'none', border: 'none', color: 'white', display: `${active>=4 ? 'none' : 'block'}`}}
                 >
                     <FaAnglesRight />
                 </button>
