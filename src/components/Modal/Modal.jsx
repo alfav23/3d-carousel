@@ -10,7 +10,7 @@ export default function Modal({ show, onClose, src = '', name = 'BMW E24', descr
                 <button className={styles.modalCloseButton} onClick={onClose}>
                     &times;
                 </button>
-                <iframe src={src} style="width:100%; max-width:560px; aspect-ratio:7/5; border:none;"></iframe>
+                <iframe src={src} style={{width:'100%', maxWidth:'560px', aspectRatio:'7/5', border:'none'}}></iframe>
                 <h4>{name}</h4>
                 <p>{description}</p>
             </div>

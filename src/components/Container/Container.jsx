@@ -41,7 +41,7 @@ export default function Container ({ children, active = 0 }) {
     return (
         <div id="canvas-container" style={{ width: "100vw", height: "100vh" }}>
             <Canvas id="canvas"
-            camera={{ position: [-10, 2, 8], near: 0.1, far: 1000, fov: 75}}
+            camera={{ position: [-10, 2, 8], near: 0.1, far: 500, fov: 45}}
             >
                 <Suspense fallback={null}>
                 <Scene active={active}>{children}</Scene>
