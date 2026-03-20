@@ -1,7 +1,8 @@
 @font-face {
-  font-family: 'Ithaca'; /* set name */
-  src:  local('Ithaca'), 
-        url('/Ithaca-LVB75.tff') format('truetype');
+  font-family: 'Ithaca';
+  src: url('/Ithaca-LVB75.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 :root {
@@ -21,8 +22,6 @@
 }
 
 a {
-  font-weight: 500;
-  /* color: #646cff; */
   text-decoration: inherit;
 }
 a:hover {
@@ -30,6 +29,7 @@ a:hover {
 }
 
 body {
+  font-family: 'Ithaca', sans-serif;
   margin: 0;
   display: flex;
   place-items: center;
@@ -43,7 +43,7 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
+  border-radius: none;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
@@ -51,25 +51,7 @@ button {
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
 button:hover {
   border-color: #93f253;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */

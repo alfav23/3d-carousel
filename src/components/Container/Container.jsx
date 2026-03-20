@@ -46,15 +46,9 @@ export default function Container ({ children, active = 0 }) {
     return (
         <div id="canvas-container" style={{ width: "100vw", height: "100vh" }}>
             <Canvas id="canvas"
-            //camera for updated order with desired background
             camera={{ position: [-10, 2, 8], near: 0.1, far: 500, fov: 45}}
-            //
-            //
-            //
             // camera position for correct original order
             // camera={{ position: [14, 2, 0], near: 0.1, far: 500, fov: 45}}
-            // 
-            //
             >
                 <Suspense fallback={null}>
                 <Scene active={active}>{children}</Scene>

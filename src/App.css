@@ -1,8 +1,4 @@
-@font-face {
-  font-family: 'Ithaca';
-  src:  local('Ithaca'), 
-        url('/Ithaca-LVB75.tff') format('truetype');
-}
+
 
 #root {
   font-family: 'Ithaca', sans-serif;
@@ -21,13 +17,3 @@
   font-family: 'Ithaca', sans-serif;
   background-color: black;
 }
-
-/* @media (prefers-color-scheme: light) {
-  .page{
-    background-color: white;
-  }
-
-  #canvas-container {
-    background-color: white;
-  }
-} */
