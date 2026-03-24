@@ -96,11 +96,11 @@ export default function Carousel(){
             </ol>
             <button onClick={(e) => handleOpenModal(active)} style={{position: 'absolute', top: '50%', left: '50%', padding: 0, zIndex: 10, background: 'none', border: '2px solid green', width: '100px', height: '100px', cursor: 'pointer'}}></button>
             <Container active={active}>
-                <Car url='sports+car+model+fiver.glb'/>
+                <Car url='LegendDriftCarBase.glb'/>
                 <Car url='/zenfullon(1).glb'/>
-                <Car url='/LegendDriftCarBase.glb'/>
-                <Car url='/car4.glb'/>
-                <Car url='Nissan+Skyline.glb'/>
+                <Car url='/sports+car+model+fiver.glb'/>
+                <Car url='/Nissan+Skyline.glb'/>
+                <Car url='car4.glb'/>
             </Container>
             <Modal show={showModal} onClose={handleCloseModal} name = {carName} description={carDescription} src={src}/>
         </div>
